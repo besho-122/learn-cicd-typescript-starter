@@ -17,6 +17,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Check Node Version
-        run: node --version
+      - name: Run tests with coverage
+        run: npm run test -- --coverage
