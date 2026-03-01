@@ -33,10 +33,9 @@ export async function handlerUsersGet(req: Request, res: Response, user: User) {
   respondWithJSON(res, 200, user);
 }
 
-function generateRandomSHA256Hash(): string {
-  // should we be using crypto.randomBytes instead of crypto.pseudoRandomBytes?
-  return crypto
-    .createHash("sha256")
-    .update(crypto.pseudoRandomBytes(32))
-    .digest("hex");
-}
+  function generateRandomSHA256Hash(): string {
+    return crypto
+      .createHash("sha256")
+      .update(crypto.randomBytes(90))
+      .digest("hex");
+  }
